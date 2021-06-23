@@ -1,0 +1,26 @@
+{
+  "name": "scraping",
+  "version": "1.0.0",
+  "description": "",
+  "main": "scraping.js",
+  "scripts": {
+    "scraping": "node dist/workers/scraping.js",
+    "consumer": "node dist/workers/consumer.js",
+    "build": "npm run gulp build",
+    "gulp": "node_modules/.bin/gulp"
+  },
+  "devDependencies": {
+    "gulp": "4.0.2",
+    "gulp-clean": "0.4.0",
+    "gulp-typescript": "5.0.1"
+  },
+  "dependencies": {
+    "@types/amqplib": "^0.8.0",
+    "amqplib": "0.8.0",
+    "moment": "^2.29.1",
+    "mongoose": "5.12.14",
+    "puppeteer": "10.0.0",
+    "tslib": "2.3.0",
+    "typescript": "4.3.4"
+  }
+}

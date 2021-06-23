@@ -1,0 +1,38 @@
+version: "3"
+
+services:
+  mongo:
+    build: ./build/mongo
+    container_name: mongo
+    ports:
+      - "27017:27017"
+    networks:
+      - default
+
+  rabbitmq:
+    build: ./build/rabbitmq
+    container_name: rabbitmq
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    networks:
+      - default
+
+  scraping:
+    build: ./app
+    container_name: scraping_service
+    command: ["wait-for-it.sh", "rabbitmq:5672", "--timeout=30", "--", "node", "dist/workers/scraping.js"]
+    networks:
+      - default
+    links:
+      - rabbitmq
+
+  consumer:
+    build: ./app
+    container_name: consumer_service
+    command: ["wait-for-it.sh", "rabbitmq:5672", "--timeout=30", "--", "node", "dist/workers/consumer.js"]
+    networks:
+      - default
+    links:
+      - rabbitmq
+      - mongo

@@ -1,0 +1,18 @@
+{
+  "mongo": {
+    "host": "mongo",
+    "port": "27017",
+    "database": "scraping"
+  },
+  "rabbitmq": {
+    "host": "rabbitmq",
+    "port": "5672"
+  },
+  "scraping": {
+    "legendastv": {
+      "username": "",
+      "password": "",
+      "searchTerm": "breaking%20bad"
+    }
+  }
+}
