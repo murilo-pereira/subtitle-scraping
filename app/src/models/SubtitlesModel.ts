@@ -37,25 +37,3 @@ const SubtitlesSchema = new Schema({
 }, {
     versionKey: false
 });
-
-
-//         ◦ Nome: string
-// ◦ Quantidade de downloads: int
-// ◦ Nota da legenda: int
-// ◦ “Like ratio” (razão entre likes e dislikes): float, duas casas decimais
-// ◦ Nome de quem enviou: string
-// ◦ Data que foi enviada: date
-// ◦ Idioma da legenda: string
-// ◦ Link de download direto: string
-
-
-// {
-//     name: name,
-//         downloads: downloads,
-//         note: '',
-//         ratio: ratio,
-//         senderName: senderName,
-//         date: date,
-//         language: language,
-//         directLink: '',
-// };
